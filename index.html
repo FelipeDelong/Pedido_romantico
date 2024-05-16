@@ -65,6 +65,7 @@
             <div class="col-12" style="margin-top: 120px;">
 
                 <div class="row d-flex justify-content-center" style="text-align: center;">
+                    <img src="images/CarinhaOlhosMarejados.gif" id="img_olhosMarejados" style="height: 150px; width: 180px" hidden>
                     <img src="images/caraSuplicanteGif.gif" id="img_pergunta" style="height: 150px; width: 180px">
                     <h1 style="font-size: 2rem; color:white; margin-top: 2rem;">Corujinha, aceitaria ser meu amor para sempre???</h1>
                 </div>
@@ -143,11 +144,13 @@
       $('#div_btn_nao').hover(
         function() {
           $("#btn_nao").attr('hidden', true);
-          $("#img_pergunta").attr('src', "images/CarinhaOlhosMarejados.gif");
+          $("#img_olhosMarejados").attr('hidden', false);
+          $("#img_pergunta").attr('hidden', true);
         },
         function() {
           $("#btn_nao").attr('hidden', false);
-          $("#img_pergunta").attr('src', "images/caraSuplicanteGif.gif");
+          $("#img_olhosMarejados").attr('hidden', true);
+          $("#img_pergunta").attr('hidden', false);
 
         }
       );
