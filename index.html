@@ -38,7 +38,7 @@
     <div class="col-12 main-container justify-content-center align-items-center">
 
         <div class="col-12" id="div_carousel" style="margin-top: 120px; text-align: center;" hidden>
-            <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner d-flex justify-content-center" style="margin-left: -80px;">
                     <div class="carousel-item active">
                         <img src="images/coracaoChamas.gif" class="d-block" alt="Coração em Chamas"
@@ -66,6 +66,7 @@
 
                 <div class="row d-flex justify-content-center" style="text-align: center;">
                     <img src="images/CarinhaOlhosMarejados.gif" id="img_olhosMarejados" style="height: 150px; width: 180px" hidden>
+                    <img src="images/carinhaSorridente.gif" id="img_sorridente" style="height: 150px; width: 180px" hidden>
                     <img src="images/caraSuplicanteGif.gif" id="img_pergunta" style="height: 150px; width: 180px">
                     <h1 style="font-size: 2rem; color:white; margin-top: 2rem;">Corujinha, aceitaria ser meu amor para sempre???</h1>
                 </div>
@@ -90,51 +91,50 @@
 </body>
 
 <script>
-    //Variaveis Globais de btn nao
-    var HEIGHT_NAO = $("#btn_nao").height();
-    var WIDTH_NAO = $("#btn_nao").width()
-    var FONT_NAO = $("#btn_nao").css("font-size");
-    FONT_NAO = parseFloat(FONT_NAO);
+    // //Variaveis Globais de btn nao
+    // var HEIGHT_NAO = $("#btn_nao").height();
+    // var WIDTH_NAO = $("#btn_nao").width()
+    // var FONT_NAO = $("#btn_nao").css("font-size");
+    // FONT_NAO = parseFloat(FONT_NAO);
 
-    //Variaveis Globais de btn sim
-    var HEIGHT_SIM = $("#btn_sim").height();
-    var WIDTH_SIM = $("#btn_sim").width()
-    var FONT_SIM = $("#btn_sim").css("font-size");
-    FONT_SIM = parseFloat(FONT_SIM);
+    // //Variaveis Globais de btn sim
+    // var HEIGHT_SIM = $("#btn_sim").height();
+    // var WIDTH_SIM = $("#btn_sim").width()
+    // var FONT_SIM = $("#btn_sim").css("font-size");
+    // FONT_SIM = parseFloat(FONT_SIM);
 
 
-    function diminuiNao() {
-        HEIGHT_NAO = HEIGHT_NAO - (HEIGHT_NAO * 0.25);
-        WIDTH_NAO = WIDTH_NAO - (WIDTH_NAO * 0.25);
-        FONT_NAO = FONT_NAO - (FONT_NAO * 0.35);
-    }
+    // function diminuiNao() {
+    //     HEIGHT_NAO = HEIGHT_NAO - (HEIGHT_NAO * 0.25);
+    //     WIDTH_NAO = WIDTH_NAO - (WIDTH_NAO * 0.25);
+    //     FONT_NAO = FONT_NAO - (FONT_NAO * 0.35);
+    // }
 
-    function aumentaSim() {
-        HEIGHT_SIM = HEIGHT_SIM + (HEIGHT_SIM * 0.25);
-        WIDTH_SIM = WIDTH_SIM + (WIDTH_SIM * 0.25);
-        FONT_SIM = FONT_SIM + (FONT_SIM * 0.25);
-    }
+    // function aumentaSim() {
+    //     HEIGHT_SIM = HEIGHT_SIM + (HEIGHT_SIM * 0.25);
+    //     WIDTH_SIM = WIDTH_SIM + (WIDTH_SIM * 0.25);
+    //     FONT_SIM = FONT_SIM + (FONT_SIM * 0.25);
+    // }
 
-    $(document).on("click", "#btn_nao", function () {
+    // $(document).on("click", "#btn_nao", function () {
 
-        diminuiNao();
-        aumentaSim();
+    //     diminuiNao();
+    //     aumentaSim();
 
-        if (FONT_NAO < 2.0) {
-            $("#btn_nao").attr("hidden", true);
-            $("#btn_sim").css("margin-left", "-350px");
-        }
-        $("#btn_nao").css("height", HEIGHT_NAO);
-        $("#btn_nao").css("width", WIDTH_NAO);
-        $("#btn_nao").css("font-size", FONT_NAO);
+    //     if (FONT_NAO < 2.0) {
+    //         $("#btn_nao").attr("hidden", true);
+    //         $("#btn_sim").css("margin-left", "-350px");
+    //     }
+    //     $("#btn_nao").css("height", HEIGHT_NAO);
+    //     $("#btn_nao").css("width", WIDTH_NAO);
+    //     $("#btn_nao").css("font-size", FONT_NAO);
 
-        $("#btn_sim").css("height", HEIGHT_SIM);
-        $("#btn_sim").css("width", WIDTH_SIM);
-        $("#btn_sim").css("font-size", FONT_SIM);
-    })
+    //     $("#btn_sim").css("height", HEIGHT_SIM);
+    //     $("#btn_sim").css("width", WIDTH_SIM);
+    //     $("#btn_sim").css("font-size", FONT_SIM);
+    // })
 
     $(document).on("click", "#btn_sim", function () {
-
 
         $("#div_carousel").attr('hidden', false);
         $("#div_btn").attr('hidden', true);
@@ -152,6 +152,16 @@
           $("#img_olhosMarejados").attr('hidden', true);
           $("#img_pergunta").attr('hidden', false);
 
+        }
+      );
+      $('#btn_sim').hover(
+        function() {
+          $("#img_sorridente").attr('hidden', false);
+          $("#img_pergunta").attr('hidden', true);
+        },
+        function() {
+          $("#img_sorridente").attr('hidden', true);
+          $("#img_pergunta").attr('hidden', false);
         }
       );
     });
