@@ -18,7 +18,6 @@
         crossorigin="anonymous"></script>
 
     <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/css/swiper-bundle.min.css"></script>
 
 </head>
 
@@ -32,6 +31,7 @@
         height: 100vh;
         position: fixed;
     }
+
 </style>
 
 <body>
@@ -65,17 +65,20 @@
             <div class="col-12" style="margin-top: 120px;">
 
                 <div class="row d-flex justify-content-center" style="text-align: center;">
-                    <img src="images/caraSuplicanteGif.gif" style="height: 150px; width: 180px">
-                    <h1 style="font-size: 2rem; color:white">Corujinha, aceitaria ser meu amor para sempre???</h1>
+                    <img src="images/caraSuplicanteGif.gif" id="img_pergunta" style="height: 150px; width: 180px">
+                    <h1 style="font-size: 2rem; color:white; margin-top: 2rem;">Corujinha, aceitaria ser meu amor para sempre???</h1>
                 </div>
 
-                <div class="row justify-content-center" id="div_btn" style="margin-top: 4rem;">
-                    <div class="col-2">
-                        <input class="form-control border-0" type="button" value="NÃO" id="btn_nao" style="color: black; background-color: #FDFFFF; font-size: 1.3rem">
+                <div class="row d-flex justify-content-center" id="div_btn">
+                    <div class="col-2 d-flex justify-content-center align-items-center" id="div_btn_nao">
+                        <div class="col-9">
+                            <input class="form-control border-0" type="button" value="NÃO" id="btn_nao" style="color: black; background-color: #FDFFFF; font-size: 1.3rem">
+                        </div>
                     </div>
-                    <div class="col-2">
+
+                    <div class="col-2"  style="padding: 2rem;">
                         <input class="form-control border-0" type="button" value="SIM" id="btn_sim"
-                            style="color: white; background-color: #AB009A; font-size: 1.3rem">
+                            style="color: white; background-color: #AB009A; font-size: 1.3rem; ">
                     </div>
                 </div>
 
@@ -135,5 +138,19 @@
         $("#div_carousel").attr('hidden', false);
         $("#div_btn").attr('hidden', true);
     })
+
+    $(document).ready(function() {
+      $('#div_btn_nao').hover(
+        function() {
+          $("#btn_nao").attr('hidden', true);
+          $("#img_pergunta").attr('src', "images/CarinhaOlhosMarejados.gif");
+        },
+        function() {
+          $("#btn_nao").attr('hidden', false);
+          $("#img_pergunta").attr('src', "images/caraSuplicanteGif.gif");
+
+        }
+      );
+    });
 
 </script>
